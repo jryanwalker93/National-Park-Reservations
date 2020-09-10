@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import Search from './Search.jsx';
