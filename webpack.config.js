@@ -7,6 +7,14 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+          },
+        ],
+      },
+      {
         test: [/\.jsx$/],
         exclude: /node_modules/,
         use: {

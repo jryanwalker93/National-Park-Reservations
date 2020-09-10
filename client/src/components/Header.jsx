@@ -1,10 +1,10 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import '../styles/Header.css';
+import '../styles/header.css';
 
 const Header = () => {
   return (
-    <div>
+    <div className="header">
       Header
     </div>
   );

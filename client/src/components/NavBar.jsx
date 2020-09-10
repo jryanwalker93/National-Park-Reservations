@@ -2,10 +2,11 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import Search from './Search.jsx';
+import '../styles/navBar.css';
 
 const NavBar = () => {
   return (
-    <div>
+    <div className='NavBar'>
       NavBar
       <Search />
     </div>

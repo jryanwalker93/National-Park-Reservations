@@ -12,7 +12,6 @@ class App extends React.Component {
         <Header />
         <NavBar />
         <CampsiteList />
-        Hello
       </div>
     );
   }
