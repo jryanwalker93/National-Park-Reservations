@@ -1,5 +1,5 @@
 /* eslint-disable */
-module.exports[
+module.exports = [
   {
       "WATCHMAN CAMPGROUND": {
           "332": {
