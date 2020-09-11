@@ -1,11 +1,15 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+/* eslint-disable radix */
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import Calendar from 'react-calendar';
 
-const AvailCalendar = ({ availability, date }) => {
-  const year = Number.parseInt(date.slice(0, 4));
-  const month = Number.parseInt(date.slice(5, 7)) - 1;
-  const day = Number.parseInt(date.slice(8, 10));
+const AvailCalendar = ({ availability, dates }) => {
+  const year = Number.parseInt(dates.slice(0, 4));
+  const month = Number.parseInt(dates.slice(5, 7)) - 1;
+  const day = Number.parseInt(dates.slice(8, 10));
 
   const monthConverter = {
     Jan: '01',
@@ -29,8 +33,8 @@ const AvailCalendar = ({ availability, date }) => {
         view="month"
         tileContent={({ activeStartDate, date, view }) => {
           let mon = date.toString().slice(4, 7);
-          let yr = date.toString().slice(11, 15);
-          let dy = date.toString().slice(8, 10);
+          const yr = date.toString().slice(11, 15);
+          const dy = date.toString().slice(8, 10);
           mon = monthConverter[mon];
           let avail = `${yr}-${mon}-${dy}`;
           if (availability[avail]) {
@@ -42,10 +46,16 @@ const AvailCalendar = ({ availability, date }) => {
         }}
         onClickDay={(value, event) => {
           let mon = value.toString().slice(4, 7);
-          let yr = value.toString().slice(11, 15);
-          let dy = value.toString().slice(8, 11);
+          const yr = value.toString().slice(11, 15);
+          const dy = value.toString().slice(8, 10);
           mon = monthConverter[mon];
-          console.log(`${yr}-${mon}-${dy}`);
+          let avail = `${yr}-${mon}-${dy}`;
+          if (availability[avail]) {
+            avail = availability[avail].sites;
+          } else {
+            avail = 0;
+          }
+          console.log(avail);
         }}
       />
     </div>

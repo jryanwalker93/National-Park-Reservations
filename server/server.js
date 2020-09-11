@@ -39,6 +39,7 @@ app.get('/campsites', (req, res) => {
 
   aggregate(campgrounds)
     .then((aggregateAvail) => {
+      console.log(aggregateAvail);
       res.status(200).send(aggregateAvail);
     })
     .catch((err) => {

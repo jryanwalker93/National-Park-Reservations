@@ -6,6 +6,8 @@
 /* eslint-disable import/extensions */
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import axios from 'axios';
+
 import Header from './Header.jsx';
 import NavBar from './NavBar.jsx';
 import CampsiteList from './CampsiteList.jsx';
@@ -16,13 +18,45 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      campsites: testData,
+      campsites: '',
       formattedAvail: {},
-      searchDate: '2020-11-01',
+      searchDate: '',
     };
 
     this.formatData = this.formatData.bind(this);
     this.renderData = this.renderData.bind(this);
+    this.searchPark = this.searchPark.bind(this);
+    this.getDate = this.getDate.bind(this);
+    this.fetchData = this.fetchData.bind(this);
+  }
+
+  getDate(event) {
+    this.setState({
+      searchDate: event.target.value,
+    });
+  }
+
+  searchPark(event) {
+    this.setState({
+      campsites: event.target.value,
+    });
+  }
+
+  fetchData(event) {
+    const { campsites, searchDate } = this.state;
+    event.preventDefault();
+    console.log('CAMPSITES: ', campsites)
+    console.log('SEARCHDATE: ', searchDate)
+    axios.get('/campsites', {
+      params: {
+        id: campsites,
+        date: searchDate,
+      },
+    })
+      .then((campsiteData) => {
+        console.log('RETURNED FROM SERVER: ', campsiteData);
+        this.formatData(campsiteData.data);
+      });
   }
 
   formatData(campsiteData) {
@@ -71,8 +105,8 @@ class App extends React.Component {
       <div>
         <button type="submit" onClick={this.renderData}>Lets do some testing</button>
         <Header />
-        <NavBar />
-        <CampsiteList campsiteData={formattedAvail} date={searchDate}/>
+        <NavBar searchPark={this.searchPark} getDate={this.getDate} fetchData={this.fetchData} />
+        <CampsiteList campsiteData={formattedAvail} date={searchDate} />
       </div>
     );
   }

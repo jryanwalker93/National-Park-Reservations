@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 /* eslint-disable react/prop-types */
 /* eslint-disable arrow-body-style */
 import React from 'react';
@@ -9,7 +10,7 @@ const Campsite = ({ campsite, date }) => {
   return (
     <div className="campsite">
       {campsiteName}
-      <AvailCalendar availability={campsite[campsiteName]} date={date}/>
+      <AvailCalendar availability={campsite[campsiteName]} dates={date} />
     </div>
   );
 };

@@ -1,7 +1,9 @@
 .campsiteList {
   display: inline-block;
-  width: 70%;
+  float: right;
+  width: 76%;
   min-height: 500px;
+  padding-left: 5px;
   height: 100%;
   border-right: 2px black solid;
 }

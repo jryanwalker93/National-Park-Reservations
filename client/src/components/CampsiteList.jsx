@@ -6,7 +6,7 @@
 import React from 'react';
 import Campsite from './Campsite.jsx';
 
-const CampsiteList = ({ campsiteData, date}) => {
+const CampsiteList = ({ campsiteData, date }) => {
   return (
     <div className="campsiteList">
       {Object.keys(campsiteData).map((site) =>
