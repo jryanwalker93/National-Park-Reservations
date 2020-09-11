@@ -18,6 +18,7 @@ class App extends React.Component {
     this.state = {
       campsites: testData,
       formattedAvail: {},
+      searchDate: '2020-11-01',
     };
 
     this.formatData = this.formatData.bind(this);
@@ -35,9 +36,10 @@ class App extends React.Component {
         for (const campsite in allCampsites) {
           const availability = allCampsites[campsite].availabilities;
           // console.log('SITE DATA: ', allCampsites[campsite].availabilities);
-          for (const date in availability) {
+          for (let date in availability) {
             // console.log('DATES: ', availability[date])
             if (availability[date] === 'Available') {
+              date = date.slice(0, 10);
               if (!formatted[campgroundName][date]) {
                 formatted[campgroundName][date] = {
                   numAvail: 1,
@@ -64,12 +66,13 @@ class App extends React.Component {
   }
 
   render() {
+    const { formattedAvail, searchDate } = this.state;
     return (
       <div>
         <button type="submit" onClick={this.renderData}>Lets do some testing</button>
         <Header />
         <NavBar />
-        <CampsiteList />
+        <CampsiteList campsiteData={formattedAvail} date={searchDate}/>
       </div>
     );
   }

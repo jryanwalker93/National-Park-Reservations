@@ -1,11 +1,15 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import '../styles/campsite.css';
+import AvailCalendar from './AvailCalendar.jsx';
 
-const Campsite = () => {
+const Campsite = ({ campsite, date }) => {
+  const campsiteName = Object.keys(campsite)[0];
   return (
     <div className="campsite">
-      Campsite
+      {campsiteName}
+      <AvailCalendar availability={campsite[campsiteName]} date={date}/>
     </div>
   );
 };
