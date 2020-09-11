@@ -9,8 +9,16 @@ const Campsite = ({ campsite, date }) => {
   const campsiteName = Object.keys(campsite)[0];
   return (
     <div className="campsite">
-      {campsiteName}
-      <AvailCalendar availability={campsite[campsiteName]} dates={date} />
+      <div className="name">{campsiteName}</div>
+      <AvailCalendar
+        availability={campsite[campsiteName]}
+        campsiteName={campsiteName}
+        dates={date}
+      />
+      <div id={`${campsiteName} open-sites`} className="not-visible">
+        Sites Available:
+        <div id={`${campsiteName} sites`}></div>
+      </div>
     </div>
   );
 };
