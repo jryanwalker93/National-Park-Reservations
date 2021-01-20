@@ -5,7 +5,7 @@
   min-height: 500px;
   padding-left: 5px;
   height: 100%;
-  border-right: 2px black solid;
+  border-right: 3px rgb(86, 144, 58) solid;
 }
 
 .campsite {
@@ -13,5 +13,12 @@
   width: 100%;
   min-height: 100px;
   height: 100%;
-  border-bottom: 2px black solid;
+  border-bottom: 3px rgb(86, 144, 58) solid;
+}
+
+.name{
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
 }

@@ -1,0 +1,51 @@
+.almost-out {
+  background-color: rgb(200, 55, 5);
+}
+
+.good-amount {
+  background-color: rgb(255, 154, 0);
+}
+
+.plenty {
+  background-color:rgb(86, 144, 58);
+}
+.campsite {
+  background-color: rgba(197, 108, 57,.6);
+}
+.campsite-calendar {
+  border-top: 3px rgb(86, 144, 58) solid;
+  margin: 1px 0px;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  text-align: center;
+  font-size:15px;
+}
+
+.react-calendar__navigation__label {
+  font-size: 20px;
+  background-color: rgba(0,0,0,0);
+  color: black;
+}
+
+#open-sites {
+  font-size:20px;
+  padding: 10px;
+  width: 50%;
+}
+
+#sites {
+  font-size: 15px;
+  padding-top: 5px;
+}
+.visible {
+  display: block;
+}
+
+.not-visible {
+  display: none;
+}
+
+.react-calendar__navigation__arrow react-calendar__navigation__next-button {
+  display: none;
+}

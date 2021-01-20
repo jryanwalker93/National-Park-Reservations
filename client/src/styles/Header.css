@@ -1,5 +1,28 @@
+body {
+  background-color: rgb(111, 73, 48);
+}
+
+img {
+  height: 40%;
+}
+
 .header {
-  height: 150px;
+  height: 350px;
   width: 100%;
-  border: 2px black solid;
+  border: 3px rgb(86, 144, 58) solid;
+  background-image: url('../assets/mesaArch.jpg');
+  background-size: cover;
+  opacity: .8;
+}
+
+.title {
+  height: auto;
+  display: inline-block;
+  margin-left: 26%;
+  width: 450px;
+  padding-top: 5.4%;
+  vertical-align: top;
+  font-size: 40px;
+  font-weight: bold;
+  color: rgb(255, 154, 0);
 }

@@ -9,8 +9,11 @@ import Campsite from './Campsite.jsx';
 const CampsiteList = ({ campsiteData, date }) => {
   return (
     <div className="campsiteList">
-      {Object.keys(campsiteData).map((site) =>
-        <Campsite campsite={{ [site]: campsiteData[site] }} key={site} date={date} />)}
+      {Object.keys(campsiteData).map((site) => (
+        <div>
+          <Campsite campsite={{ [site]: campsiteData[site] }} key={site} date={date} />
+        </div>
+      ))}
     </div>
   );
 };
